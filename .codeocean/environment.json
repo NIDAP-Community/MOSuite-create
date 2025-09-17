@@ -1,0 +1,8 @@
+{
+	"version": 1,
+	"base_image": "codeocean/mosuite:latest",
+	"options": {
+		"registry_host_arg": true,
+		"mount_secrets": true
+	}
+}

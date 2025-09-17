@@ -1,0 +1,5 @@
+# hash:sha256:e976e294577d94061f7dd3c67c1f689e9bea3fa7668aae6272a8e6dfd680c67b
+ARG REGISTRY_HOST
+FROM $REGISTRY_HOST/codeocean/mosuite:latest
+
+ARG DEBIAN_FRONTEND=noninteractive

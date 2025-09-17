@@ -1,0 +1,9 @@
+{
+	"version": 1,
+	"attached_datasets": [
+		{
+			"id": "c4cbf14f-afed-48a3-bd99-bf9787c4ee60",
+			"mount": "input_samples"
+		}
+	]
+}
