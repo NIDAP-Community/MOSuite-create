@@ -1,5 +1,5 @@
 {
-  "feature_counts_filepath": "/data/input_samples/RSEM_genes.txt.gz",
-  "sample_meta_filepath": "/data/input_samples/sample_metadata.tsv.gz",
+  "feature_counts_filepath": "$FEATURE_COUNTS_FILEPATH",
+  "sample_meta_filepath": "$SAMPLE_META_FILEPATH",
   "moo_output_rds": "moo.rds"
 }

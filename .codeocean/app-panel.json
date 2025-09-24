@@ -1,0 +1,30 @@
+{
+	"version": 1,
+	"datasets": [
+		{
+			"id": "c4cbf14f-afed-48a3-bd99-bf9787c4ee60",
+			"name": "Mosuite input data"
+		}
+	],
+	"parameters": [
+		{
+			"id": "8F749ZJLcLpGzVGB",
+			"name": "Counts File Path",
+			"description": "Path to counts file",
+			"help_text": "Path to RSEM genes",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "/data/input_samples/RSEM_genes.txt.gz",
+			"required": true
+		},
+		{
+			"id": "o96iSzhAdX7TkLld",
+			"name": "Metadata File path",
+			"description": "Path to metadata file",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "/data/input_samples/sample_metadata.tsv.gz",
+			"required": true
+		}
+	]
+}
