@@ -1,7 +1,7 @@
 {
   "moo_input_rds": "moo.rds",
   "moo_output_rds": "moo.rds",
-  "covariates_colnames": "condition",
-  "contrast_colname": "condition",
-  "contrasts": ["knockout-wildtype"]
+  "covariates_colnames": "$COVARIATES_COLNAMES",
+  "contrast_colname": "$CONTRAST_COLNAME",
+  "contrasts": ["$CONTRAST_TO_DO"]
 }
