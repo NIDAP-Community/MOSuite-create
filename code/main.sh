@@ -1,51 +1,71 @@
 #!/usr/bin/env sh
 set -euo pipefail
+set -a #env autoexport
 
 # set MOSuite options for plots
 export MOO_SAVE_PLOTS=TRUE
 export MOO_PLOTS_DIR=/results/plots
 mkdir -p $MOO_PLOTS_DIR
+mkdir -p ../results/RDS
 
+#find data
+
+FEATURE_COUNTS_FILEPATH=$(find -L ../data \
+  \( -name "*genes.txt.gz" -o -name "*genes.csv.gz" -o -name "*genes.tsv.gz" \) | head -n 1)
+
+
+SAMPLE_META_FILEPATH=$(find -L ../data \
+  \( -name "*metadata.tsv.gz" -o -name "*metadata.csv.gz" -o -name "*metadata.txt.gz" \)  | head -n 1)
+
+
+
+if [ -n "$FEATURE_COUNTS_FILEPATH" ]; then
+  echo "Found feature counts file: $FEATURE_COUNTS_FILEPATH"
+else
+  echo "No feature counts file found in ../data"
+fi
+
+if [ -n "$SAMPLE_META_FILEPATH" ]; then
+  echo "Found sample metadata file: $SAMPLE_META_FILEPATH"
+else
+  echo "No sample metadata file found in ../data"
+fi
 
 #config options
-set -a #env autoexport
-FEATURE_COUNTS_FILEPATH="$1"
-SAMPLE_META_FILEPATH="$2"
-GROUP_CONDITION_COLNAME="$3"
-SAMPLE_ID="$4"
 
-#count filtering
-MIN_NONZERO_COUNT_VAL="$5"
-MIN_NOSAMPLE_COUNT_VAL_TOTAL="$6"
-MIN_NOSAMPLE_COUNT_VAL_GROUP="$7"
+GROUP_CONDITION_COLNAME="$1"
+SAMPLE_ID="$2"
 
-#diff expression
-COVARIATES_COLNAMES="$8"
-CONTRAST_COLNAME="$9"
-CONTRAST_TO_DO="${10}"
+# count filtering
+MIN_NONZERO_COUNT_VAL="$3"
+MIN_NOSAMPLE_COUNT_VAL_TOTAL="$4"
+MIN_NOSAMPLE_COUNT_VAL_GROUP="$5"
 
-#diff expression filtering
-SIG_THRESHOLD=${11}
-FC_CUTOFF=${12}
-CONTRAST_FILTER="${13}"
-CONTRAST_NAMES_FILTER="${14}"
-GROUPS_FILTER="${15}"
-GROUPS_NAMES_FILTER="${16}"
+# diff expression
+COVARIATES_COLNAMES="$6"
+CONTRAST_COLNAME="$7"
+CONTRAST_TO_DO="$8"
 
-#plot options
-DIFF_PLOT_TYPE="${17}"
-DIFF_LABEL_FONT_SIZE=${18}
-DIFF_LABEL_DIST=$(( ${19} ))
-DIFF_Y_EXPAN=${20}
-DIFF_FILL_COLOURS="${21}"
-DIFF_BAR_WIDTH=${22}
-DIFF_BAR_BORDER="${23}"
-DIFF_PLOT_FONTSIZE=${24}
+# diff expression filtering
+SIG_THRESHOLD="$9"
+FC_CUTOFF="${10}"
+CONTRAST_FILTER="${11}"
+CONTRAST_NAMES_FILTER="${12}"
+GROUPS_FILTER="${13}"
+GROUPS_NAMES_FILTER="${14}"
+
+# plot options
+DIFF_PLOT_TYPE="${15}"
+DIFF_LABEL_FONT_SIZE="${16}"
+DIFF_LABEL_DIST="${17}"
+DIFF_Y_EXPAN="${18}"
+DIFF_FILL_COLOURS="${19}"
+DIFF_BAR_WIDTH="${20}"
+DIFF_BAR_BORDER="${21}"
+DIFF_PLOT_FONTSIZE="${22}"
+
 set +a  
 
-
-
-echo DIFF_LABEL_DIST="${19}"
 
 
 # resolve filenames under ../data/<subdir>/ ---

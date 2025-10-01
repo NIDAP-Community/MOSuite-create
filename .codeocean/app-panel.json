@@ -33,28 +33,6 @@
 	],
 	"parameters": [
 		{
-			"id": "8F749ZJLcLpGzVGB",
-			"category": "gDLmTU36PrmD13RK",
-			"name": "Counts File Path",
-			"description": "Name of the counts file. ",
-			"help_text": "Provide either the name of your counts file or the path to it. \nThe file should be attached in a data asset available at ../data. \nThis app will automatically deduce the path to the file specified, provided that the file depth is no more than 2 directories. Alternatively, a path can be provided. \n\neg. /data/input_samples/RSEM_genes.txt.gz\n",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "RSEM_genes.txt.gz",
-			"required": true
-		},
-		{
-			"id": "o96iSzhAdX7TkLld",
-			"category": "gDLmTU36PrmD13RK",
-			"name": "Metadata File path",
-			"description": "Path to metadata file",
-			"help_text": "Provide either the name of your metadata file or the path to it. \nThe file should be attached in a data asset available at ../data. \nThis app will automatically deduce the path to the file specified, provided that the file depth is no more than 2 directories. Alternatively, a path can be provided. \n\neg. /data/input_samples/sample_metadata.tsv.gz\n",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "sample_metadata.tsv.gz",
-			"required": true
-		},
-		{
 			"id": "FBMYuq4Fz7xGDZ1p",
 			"category": "gDLmTU36PrmD13RK",
 			"name": "Sample Group Column Name",
@@ -227,7 +205,7 @@
 			"description": "Font size for labels in the plot (default: 6)",
 			"type": "text",
 			"value_type": "integer",
-			"default_value": "6",
+			"default_value": "4",
 			"minimum": 1,
 			"maximum": 1000
 		},
@@ -249,7 +227,7 @@
 			"description": "Expansion of the y-axis (default: 0.08)",
 			"type": "text",
 			"value_type": "number",
-			"default_value": "0.08"
+			"default_value": "0.04"
 		},
 		{
 			"id": "l84H0KI9rOjg2C8e",
@@ -258,7 +236,7 @@
 			"description": "Fill colors for the bars",
 			"type": "list",
 			"value_type": "string",
-			"default_value": "\"steelblue1\", \"whitesmoke\"",
+			"default_value": "\"forestgreen\", \"ivory\"",
 			"extra_data": [
 				"\"steelblue1\", \"whitesmoke\"",
 				"\"darkorange1\", \"gray95\"",
@@ -302,12 +280,7 @@
 			"description": "Font size for plot titles",
 			"type": "text",
 			"value_type": "number",
-			"default_value": "12"
-		}
-	],
-	"results": [
-		{
-			"file_name": "plots/diff/filt/barchart.png"
+			"default_value": "8"
 		}
 	]
 }

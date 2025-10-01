@@ -1,6 +1,6 @@
 {
-  "moo_input_rds": "moo.rds",
-  "moo_output_rds": "moo.rds",
+  "moo_input_rds": "../results/RDS/moo.cleaned.filtered.normalized.rds",
+  "moo_output_rds": "../results/RDS/moo.cleaned.filtered.normalized.diff.rds",
   "covariates_colnames": "$COVARIATES_COLNAMES",
   "contrast_colname": "$CONTRAST_COLNAME",
   "contrasts": ["$CONTRAST_TO_DO"]

@@ -1,6 +1,6 @@
 {
-  "moo_input_rds": "moo.rds",
-  "moo_output_rds": "moo.rds",
+  "moo_input_rds": "../results/RDS/moo.cleaned.filtered.normalized.diff.rds",
+  "moo_output_rds": "../results/RDS/moo.cleaned.filtered.normalized.diff.filtered.rds",
   "significance_column": "adjpval",
   "significance_cutoff": $SIG_THRESHOLD,
   "change_column": "logFC",
