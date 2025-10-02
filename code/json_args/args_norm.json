@@ -1,6 +1,0 @@
-{
-  "moo_input_rds": "../results/RDS/moo.cleaned.filtered.rds",
-  "moo_output_rds": "../results/RDS/moo.cleaned.filtered.normalized.rds",
-  "group_colname": "$GROUP_CONDITION_COLNAME",
-  "label_colname": "$SAMPLE_ID"
-}

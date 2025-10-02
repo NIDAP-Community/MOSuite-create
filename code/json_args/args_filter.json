@@ -1,9 +1,0 @@
-{
-  "moo_input_rds": "../results/RDS/moo.cleaned.rds",
-  "moo_output_rds": "../results/RDS/moo.cleaned.filtered.rds",
-  "group_colname": "$GROUP_CONDITION_COLNAME",
-  "label_colname": "$SAMPLE_ID",
-  "minimum_count_value_to_be_considered_nonzero": "$MIN_NONZERO_COUNT_VAL",
-  "minimum_number_of_samples_with_nonzero_counts_in_total": "$MIN_NOSAMPLE_COUNT_VAL_TOTAL",
-  "minimum_number_of_samples_with_nonzero_counts_in_a_group": "$MIN_NOSAMPLE_COUNT_VAL_GROUP"
-}
