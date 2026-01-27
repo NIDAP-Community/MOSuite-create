@@ -1,4 +1,4 @@
-# MOSuite-create
+# Code Ocean - MOSuite - create
 
 create multiOmicDataset from csv/tsv files
 
