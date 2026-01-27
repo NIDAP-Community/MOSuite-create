@@ -1,5 +1,0 @@
-{
-  "feature_counts_filepath": "$FEATURE_COUNTS_FILEPATH",
-  "sample_meta_filepath": "$SAMPLE_META_FILEPATH",
-  "moo_output_rds": "../results/RDS/moo.rds"
-}
