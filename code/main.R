@@ -13,10 +13,8 @@ options(moo_plots_dir = plots_dir, moo_save_plots = TRUE)
 dir.create(plots_dir, recursive=TRUE)
 
 # log installed packages & versions
-message(R.version.string)
 pkg_versions <- tibble::as_tibble(installed.packages())
 write_csv(pkg_versions, file.path(results_dir, 'r-packages.csv'))
-pkg_versions |> filter(Package == 'MOSuite') |> select(Package, LibPath, Version)
 
 # parse CLI arguments
 parser <- ArgumentParser(description = "Create multi-omic dataset from files")
@@ -31,8 +29,6 @@ args <- parser$parse_args()
 for (f in c(args$sample_metadata_filename, args$raw_counts_filename)) {
     if (!file.exists(f)) {
         stop(glue("File not found: {f}"))
-    } else {
-        message(glue("Found file {f}"))
     }
 }
 
@@ -42,8 +38,4 @@ moo <- create_multiOmicDataSet_from_files(
     feature_counts_filepath = args$raw_counts_filename,
     delim = args$delim
 )
-# moo <- create_multiOmicDataSet_from_dataframes(
-#         sample_metadata = read_csv(args$sample_metadata_filename),
-#         counts_dat = read_csv(args$raw_counts_filename)
-# )
 write_rds(moo, file.path(results_dir, 'moo.rds'))
