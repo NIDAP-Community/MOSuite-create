@@ -1,9 +1,14 @@
 {
 	"version": 1,
+	"named_parameters": true,
+	"general": {
+		"title": "MOSuite-create",
+		"instructions": "create multiOmicsDataSet from files"
+	},
 	"datasets": [
 		{
-			"id": "c4cbf14f-afed-48a3-bd99-bf9787c4ee60",
-			"name": "Mosuite input data"
+			"id": "bd9a7518-66cb-4d50-9992-df3271aeb807",
+			"name": "NIDAP bulk RNA-seq training dataset"
 		}
 	],
 	"categories": [
@@ -16,24 +21,35 @@
 	],
 	"parameters": [
 		{
-			"id": "FeV6T5haLqiC7p",
+			"id": "vErI4n2A3SVqtFPz",
 			"category": "gDLmTU36PrmD13RK",
-			"name": "Sample Group Column Name",
-			"description": "Column name distinguishing sample groups in the input sample metadata file",
-			"help_text": "The column from the sample metadata containing the sample group information. This is usually a column showing to which experimental treatments each sample belongs (e.g. WildType, Knockout, Tumor, Normal, Before, After, etc.).\n\n",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "condition"
+			"name": "sample metadata filename",
+			"param_name": "sample_metadata_filename",
+			"description": "Sample metadata filename as csv or tsv (gzip is supported)",
+			"type": "file",
+			"required": true
 		},
 		{
-			"id": "FtpkPzM27CVidC",
+			"id": "PWHob7bTHaUsDk0O",
 			"category": "gDLmTU36PrmD13RK",
-			"name": "Label Column Name",
-			"description": "The column name describing sample names in your input metadata file  ",
-			"help_text": "The column from the sample metadata containing the sample labels as you wish them to appear in the plots produced by this template. This can be the same Sample Names Column. However, you may desire different labels to display on your figure (e.g. shorter labels are sometimes preferred on plots). In that case, select the column with your preferred Labels here. The selected column should contain unique names for each sample. (Default– sample_id)",
+			"name": "Raw counts filename",
+			"param_name": "raw_counts_filename",
+			"description": "Raw counts file as csv or tsv (gzip is supported)",
+			"type": "file",
+			"required": true
+		},
+		{
+			"id": "SmNCcfekx5eky9X4",
+			"category": "gDLmTU36PrmD13RK",
+			"name": "Delimiter",
+			"param_name": "delim",
+			"description": "Delimiter for input files (e.g. use \",\" for csv or \"\\t\" for tsv)",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "sample_id"
+			"default_value": ","
 		}
+	],
+	"results": [
+		{}
 	]
 }

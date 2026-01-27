@@ -1,33 +1,25 @@
 {
 	"version": 1,
 	"base_image": "codeocean/mosuite:latest",
+	"post_install": true,
 	"options": {
 		"registry_host_arg": true,
+		"git_ask_pass": true,
 		"mount_secrets": true
 	},
 	"installers": {
-		"vscode": {
+		"rcran": {
 			"packages": [
 				{
-					"name": "continue.continue"
+					"name": "argparse",
+					"version": "2.3.1"
 				},
 				{
-					"name": "ms-python.python"
-				},
-				{
-					"name": "ms-toolsai.jupyter"
-				},
-				{
-					"name": "reageyao.biosyntax"
-				},
-				{
-					"name": "reditorsupport.r"
-				},
-				{
-					"name": "saoudrizwan.claude-dev"
+					"name": "remotes",
+					"version": "2.5.0"
 				}
 			],
-			"version": "4.100.3"
+			"use_rcache": true
 		}
 	}
 }
