@@ -4,6 +4,7 @@ library(argparse)
 library(glue)
 library(MOSuite)
 library(readr)
+library(stringr)
 library(dplyr)
 
 # set up results directory
@@ -19,23 +20,32 @@ write_csv(pkg_versions, file.path(results_dir, 'r-packages.csv'))
 # parse CLI arguments
 parser <- ArgumentParser(description = "Create multi-omic dataset from files")
 
-parser$add_argument("--sample_metadata_filename", type="character", required=TRUE)
-parser$add_argument("--raw_counts_filename", type="character", required=TRUE)
 parser$add_argument("--delim", type="character", required=FALSE, default=",")
 
 args <- parser$parse_args()
 
+# find input files
+data_files <- Sys.glob(Sys.glob(file.path('../data/**','*.[ct]sv*')))
+count_files <- Filter(\(x) str_detect(x, regex("count", ignore_case = TRUE)), data_files)
+sample_meta_files <- Filter(\(x) str_detect(x, regex("sample|meta", ignore_case = TRUE)), data_files)
+
 # validate inputs
-for (f in c(args$sample_metadata_filename, args$raw_counts_filename)) {
-    if (!file.exists(f)) {
-        stop(glue("File not found: {f}"))
-    }
+if (length(count_files) == 0) {
+    stop(glue("No counts data file was found. Please place a csv or tsv file containg the word 'count' in data/"))
 }
+if (length(sample_meta_files) == 0) {
+    stop(glue("No sample metadata file was found. Please place a csv or tsv file containg the word 'sample' or 'meta' in data/"))
+}
+
+count_filename <- count_files[1]
+sample_metadata_filename <- sample_meta_files[1]
+message(glue("Counts data file: {count_filename}"))
+message(glue("Sample metadata file: {sample_metadata_filename}"))
 
 # run MOSuite
 moo <- create_multiOmicDataSet_from_files(
-    sample_meta_filepath = args$sample_metadata_filename,
-    feature_counts_filepath = args$raw_counts_filename,
+    sample_meta_filepath = sample_metadata_filename,
+    feature_counts_filepath = count_filename,
     delim = args$delim
 )
 write_rds(moo, file.path(results_dir, 'moo.rds'))

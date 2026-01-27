@@ -21,24 +21,6 @@
 	],
 	"parameters": [
 		{
-			"id": "vErI4n2A3SVqtFPz",
-			"category": "gDLmTU36PrmD13RK",
-			"name": "sample metadata filename",
-			"param_name": "sample_metadata_filename",
-			"description": "Sample metadata filename as csv or tsv (gzip is supported)",
-			"type": "file",
-			"required": true
-		},
-		{
-			"id": "PWHob7bTHaUsDk0O",
-			"category": "gDLmTU36PrmD13RK",
-			"name": "Raw counts filename",
-			"param_name": "raw_counts_filename",
-			"description": "Raw counts file as csv or tsv (gzip is supported)",
-			"type": "file",
-			"required": true
-		},
-		{
 			"id": "SmNCcfekx5eky9X4",
 			"category": "gDLmTU36PrmD13RK",
 			"name": "Delimiter",
