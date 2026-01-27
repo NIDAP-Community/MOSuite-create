@@ -1,7 +1,7 @@
 metadata_version: 1
 name: MOSuite-create
 description: |-
-  R package for differential multi-omics analysis
+  create a multiOmicDataset from csv/tsv files
 
   Multi-Omics Suite provides a suite of functions to clean, filter, batch-correct, normalize, visualize, and perform differential expression analysis. While the package is designed for differential RNA-seq analysis and multi-omics datasets, it can be used for any data represented in a counts table. See the website for more information, documentation, and examples: https://ccbr.github.io/MOSuite/
 tags:
