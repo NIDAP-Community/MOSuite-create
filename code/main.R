@@ -11,7 +11,6 @@ library(dplyr)
 results_dir <- file.path('..','results')
 plots_dir <- file.path(results_dir, 'figures')
 options(moo_plots_dir = plots_dir, moo_save_plots = TRUE)
-dir.create(plots_dir, recursive=TRUE)
 
 # log installed packages & versions
 pkg_versions <- tibble::as_tibble(installed.packages())
@@ -29,7 +28,9 @@ args <- parser$parse_args()
 # find input files
 regex_count = args$regex_count
 regex_sample = args$regex_sample
-data_files <- list.files(file.path('../data'), recursive = TRUE, full.names = TRUE)
+data_dir <- "../data"
+data_files <- list.files(file.path(data_dir), recursive = TRUE, full.names = TRUE)
+message(glue("Data files found in {normalizePath(data_dir)}: {glue_collapse(data_files, sep = ', ')}"))
 count_files <- Filter(\(x) str_detect(x, regex(regex_count, ignore_case = TRUE)), data_files)
 sample_meta_files <- Filter(\(x) str_detect(x, regex(regex_sample, ignore_case = TRUE)), data_files)
 
