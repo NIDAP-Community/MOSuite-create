@@ -1,5 +1,9 @@
 # MOSuite-create CodeOcean Capsule
 
+## v4.0
+
+Report data files found for debugging purposes.
+
 ## v3.0
 
 Removed counts file & input file parameters -- they are instead found via regex patterns in the data directory.
