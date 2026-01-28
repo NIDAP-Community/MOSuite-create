@@ -29,6 +29,26 @@
 			"type": "text",
 			"value_type": "string",
 			"default_value": ","
+		},
+		{
+			"id": "1ICABBeFc9fdX5D5",
+			"category": "gDLmTU36PrmD13RK",
+			"name": "Counts file pattern",
+			"param_name": "regex_count",
+			"description": "Regular expression pattern for finding the counts file in data/",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "count.*.[ct]sv*"
+		},
+		{
+			"id": "GsdtoK1el4aJObcg",
+			"category": "gDLmTU36PrmD13RK",
+			"name": "Sample metadata file pattern",
+			"param_name": "regex_sample",
+			"description": "Regular expression pattern for finding the sample metadata file in data/",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "sample.*.[ct]sv*"
 		}
 	],
 	"results": [
