@@ -1,4 +1,4 @@
-# MOSuite-create CodeOcean Capsule
+# CodeOcean Capsule - MOSuite - create multiOmicDataset
 
 ## v4.0
 

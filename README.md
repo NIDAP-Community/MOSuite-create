@@ -1,4 +1,6 @@
-# MOSuite-create CodeOcean Capsule
+# MOSuite-create
+
+Code Ocean capsule: MOSuite - create multiOmicDataset
 
 create multiOmicDataset from csv/tsv files
 
