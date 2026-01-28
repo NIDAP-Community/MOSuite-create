@@ -53,4 +53,4 @@ moo <- create_multiOmicDataSet_from_files(
     feature_counts_filepath = count_filename,
     delim = args$delim
 )
-write_rds(moo, file.path(results_dir, 'moo.rds'))
+write_rds(moo, file.path(results_dir, 'moo', 'moo.rds'))
