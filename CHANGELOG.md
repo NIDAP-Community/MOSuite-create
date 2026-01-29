@@ -1,5 +1,9 @@
 # CodeOcean Capsule - MOSuite - create multiOmicDataset
 
+## v5.0
+
+The output multiOmicDataSet RDS file is now saved to a subdirectory (`results/moo/moo.rds`) for easier re-use as a data asset.
+
 ## v4.0
 
 Report data files found for debugging purposes.
