@@ -7,14 +7,8 @@ library(readr)
 library(stringr)
 library(dplyr)
 
-# set up results directory
-results_dir <- file.path('..','results')
-plots_dir <- file.path(results_dir, 'figures')
-options(moo_plots_dir = plots_dir, moo_save_plots = TRUE)
-
-# log installed packages & versions
-pkg_versions <- tibble::as_tibble(installed.packages())
-write_csv(pkg_versions, file.path(results_dir, 'r-packages.csv'))
+# set up capsule environment
+setup_capsule_environment()
 
 # parse CLI arguments
 parser <- ArgumentParser(description = "Create multi-omic dataset from files")
@@ -53,4 +47,4 @@ moo <- create_multiOmicDataSet_from_files(
     feature_counts_filepath = count_filename,
     delim = args$delim
 )
-write_rds(moo, file.path(results_dir, 'moo', 'moo.rds'))
+write_rds(moo, file.path(getOption("moo_plots_dir"), "..", "moo", "moo.rds"))
