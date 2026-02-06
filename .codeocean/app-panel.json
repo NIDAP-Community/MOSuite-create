@@ -38,7 +38,7 @@
 			"description": "Regular expression pattern for finding the counts file in data/",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "count.*.[ct]sv*"
+			"default_value": "count.*\\\\.[ct]sv(\\\\.gz)?"
 		},
 		{
 			"id": "GsdtoK1el4aJObcg",
@@ -48,7 +48,7 @@
 			"description": "Regular expression pattern for finding the sample metadata file in data/",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "sample.*.[ct]sv*"
+			"default_value": "count.*\\\\.[ct]sv(\\\\.gz)?"
 		}
 	]
 }
