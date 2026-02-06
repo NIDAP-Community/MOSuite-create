@@ -1,5 +1,9 @@
 # CodeOcean Capsule - MOSuite - create multiOmicDataset
 
+## development version
+
+- Throw a warning if multiple counts files or metadata files are found matching the patterns.
+
 ## v6.0
 
 - Use MOSuite v0.3.0 docker container.
