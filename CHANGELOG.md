@@ -1,8 +1,8 @@
 # CodeOcean Capsule - MOSuite - create multiOmicDataset
 
-## development version
+## v6.0
 
-- Use MOSuite v0.2.1-dev docker container.
+- Use MOSuite v0.3.0 docker container.
 
 ## v5.0
 

@@ -50,10 +50,5 @@
 			"value_type": "string",
 			"default_value": "sample.*.[ct]sv*"
 		}
-	],
-	"results": [
-		{
-			"file_name": "moo.rds"
-		}
 	]
 }
