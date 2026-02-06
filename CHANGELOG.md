@@ -1,5 +1,10 @@
 # CodeOcean Capsule - MOSuite - create multiOmicDataset
 
+## development version
+
+- Throw a warning if multiple counts files or metadata files are found matching the patterns. (#6, @kelly-sovacool)
+- The results file is now saved to `results/moo/moo-raw.rds` to prevent collisions with other capsules. (#6, @kelly-sovacool)
+
 ## v6.0
 
 - Use MOSuite v0.3.0 docker container.
