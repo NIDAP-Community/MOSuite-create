@@ -2,7 +2,7 @@
 
 Code Ocean capsule: MOSuite - create multiOmicDataset
 
-[![test](https://github.com/NIDAP-Community/MOSuite-create/actions/workflows/test.yml/badge.svg)](https://github.com/NIDAP-Community/MOSuite-create/actions/workflows/test.yml)
+[![tests](https://github.com/NIDAP-Community/MOSuite-create/actions/workflows/tests.yml/badge.svg)](https://github.com/NIDAP-Community/MOSuite-create/actions/workflows/tests.yml)
 
 create multiOmicDataset from csv/tsv files
 

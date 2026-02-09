@@ -14,8 +14,6 @@ test_that("code/run executes successfully with default CLI arguments", {
   dir.create(code_dir)
   dir.create(data_dir)
   dir.create(results_dir)
-  dir.create(file.path(results_dir, "figures"), recursive = TRUE)
-  dir.create(file.path(results_dir, "moo"), recursive = TRUE)
 
   # Download test data
   counts_file <- file.path(data_dir, "Raw_Counts.csv.gz")
