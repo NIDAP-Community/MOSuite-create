@@ -19,19 +19,40 @@ test_that("code/run executes successfully with default CLI arguments", {
   counts_file <- file.path(data_dir, "Raw_Counts.csv.gz")
   sample_meta_file <- file.path(data_dir, "Sample_Metadata.csv.gz")
 
-  tryCatch({
-    download.file(counts_url, counts_file, quiet = TRUE, mode = "wb", timeout = 30)
-    download.file(sample_meta_url, sample_meta_file, quiet = TRUE, mode = "wb", timeout = 30)
-  }, error = function(e) {
-    skip(paste("Could not download test data:", e$message))
-  })
+  tryCatch(
+    {
+      download.file(
+        counts_url,
+        counts_file,
+        quiet = TRUE,
+        mode = "wb",
+        timeout = 30
+      )
+      download.file(
+        sample_meta_url,
+        sample_meta_file,
+        quiet = TRUE,
+        mode = "wb",
+        timeout = 30
+      )
+    },
+    error = function(e) {
+      skip(paste("Could not download test data:", e$message))
+    }
+  )
 
   expect_true(file.exists(counts_file), "Counts file should be downloaded")
-  expect_true(file.exists(sample_meta_file), "Sample metadata file should be downloaded")
+  expect_true(
+    file.exists(sample_meta_file),
+    "Sample metadata file should be downloaded"
+  )
 
   # Copy main.R and run script to workspace
   repo_root <- normalizePath(file.path(dirname(getwd()), ".."))
-  file.copy(file.path(repo_root, "code", "main.R"), file.path(code_dir, "main.R"))
+  file.copy(
+    file.path(repo_root, "code", "main.R"),
+    file.path(code_dir, "main.R")
+  )
   file.copy(file.path(repo_root, "code", "run"), file.path(code_dir, "run"))
 
   # Run the script from code directory
@@ -52,8 +73,10 @@ test_that("code/run executes successfully with default CLI arguments", {
 
   # Check for successful execution
   expect_equal(exit_code, 0, info = "run script should execute without error")
-  expect_true(file.exists(file.path(results_dir, "moo", "moo-raw.rds")),
-              "Output file moo-raw.rds should be created")
+  expect_true(
+    file.exists(file.path(results_dir, "moo", "moo-raw.rds")),
+    "Output file moo-raw.rds should be created"
+  )
 
   # Validate output is a valid MOO object
   moo <- readr::read_rds(file.path(results_dir, "moo", "moo-raw.rds"))
