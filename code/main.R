@@ -32,8 +32,8 @@ parser$add_argument(
 args <- parser$parse_args()
 
 # find input files
-regex_count = args$regex_count
-regex_sample = args$regex_sample
+regex_count <- args$regex_count
+regex_sample <- args$regex_sample
 data_dir <- "../data"
 data_files <- list.files(
   file.path(data_dir),
