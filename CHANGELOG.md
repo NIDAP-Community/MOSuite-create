@@ -1,5 +1,9 @@
 # CodeOcean Capsule - MOSuite - create multiOmicDataset
 
+## Development version
+
+- Improved the Code Ocean parameter UI for the create capsule (#11).
+
 ## v7.0
 
 - Throw a warning if multiple counts files or metadata files are found matching the patterns. (#6, @kelly-sovacool)
