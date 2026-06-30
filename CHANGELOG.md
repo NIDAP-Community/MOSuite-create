@@ -2,7 +2,7 @@
 
 ## Development version
 
-- Improved the Code Ocean parameter UI for the create capsule (#11).
+- Improved the Code Ocean parameter UI for the create capsule (#11, @phoman14).
 
 ## v7.0
 
