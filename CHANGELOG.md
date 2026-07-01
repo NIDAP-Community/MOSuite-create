@@ -2,6 +2,7 @@
 
 ## Development version
 
+- Fixed the Code Ocean default sample metadata file pattern so it selects sample metadata instead of counts files (#11, @phoman14).
 - Improved the Code Ocean parameter UI for the create capsule (#11, @phoman14).
 
 ## v7.0

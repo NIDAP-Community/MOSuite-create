@@ -48,7 +48,7 @@
 			"description": "Regular expression pattern for finding the sample metadata file in data/",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "count.*\\\\.[ct]sv(\\\\.gz)?"
+			"default_value": "sample.*\\\\.[ct]sv(\\\\.gz)?"
 		}
 	]
 }
