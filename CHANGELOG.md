@@ -1,9 +1,15 @@
 # CodeOcean Capsule - MOSuite - create multiOmicDataset
 
-## development version
+## Development version
+
+- Improved the Code Ocean parameter UI for the create capsule (#11, @phoman14).
+
+## v7.0
 
 - Throw a warning if multiple counts files or metadata files are found matching the patterns. (#6, @kelly-sovacool)
 - The results file is now saved to `results/moo/moo-raw.rds` to prevent collisions with other capsules. (#6, @kelly-sovacool)
+- The MOSuite package is now available in `code/MOSuite`. (#7)
+- Use MOSuite v0.3.1.
 
 ## v6.0
 
