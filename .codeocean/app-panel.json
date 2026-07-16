@@ -33,22 +33,23 @@
 		{
 			"id": "1ICABBeFc9fdX5D5",
 			"category": "gDLmTU36PrmD13RK",
-			"name": "Counts file pattern",
+			"name": "Counts file name",
 			"param_name": "regex_count",
-			"description": "Regular expression pattern for finding the counts file in data/",
+			"description": " ",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "count.*\\\\.[ct]sv(\\\\.gz)?"
+			"default_value": "Raw_Counts.csv",
+			"required": true
 		},
 		{
 			"id": "GsdtoK1el4aJObcg",
 			"category": "gDLmTU36PrmD13RK",
-			"name": "Sample metadata file pattern",
+			"name": "Sample metadata file",
 			"param_name": "regex_sample",
-			"description": "Regular expression pattern for finding the sample metadata file in data/",
 			"type": "text",
 			"value_type": "string",
-			"default_value": "sample.*\\\\.[ct]sv(\\\\.gz)?"
+			"default_value": "Sample_Metadata_Bulk_RNA-seq_Training_Dataset_CCBR.csv",
+			"required": true
 		}
 	]
 }
