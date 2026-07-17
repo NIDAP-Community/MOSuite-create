@@ -25,7 +25,7 @@
 			"category": "gDLmTU36PrmD13RK",
 			"name": "Delimiter",
 			"param_name": "delim",
-			"description": "Delimiter for input files (e.g. use \",\" for csv or \"\\t\" for tsv)",
+			"description": "Delimiter for input files (e.g. use \",\" for csv or \"\\t\" for tsv or txt)",
 			"type": "text",
 			"value_type": "string",
 			"default_value": ","
