@@ -2,6 +2,7 @@
 
 ## Development version
 
+- Expose advanced create capsule input parameters in the Code Ocean app panel (#17, @phoman14).
 - Improved the Code Ocean parameter UI for the create capsule (#11, @phoman14).
 
 ## v7.0
