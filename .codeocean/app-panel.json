@@ -17,6 +17,12 @@
 			"name": "Basic",
 			"description": "Options for defining input data",
 			"icon": "📁"
+		},
+		{
+			"id": "FvI4Z2eb9sjL47Jt",
+			"name": "Advanced",
+			"description": "Advanced input column options",
+			"icon": "📂"
 		}
 	],
 	"parameters": [
@@ -49,6 +55,41 @@
 			"value_type": "string",
 			"default_value": "Sample_Metadata_Bulk_RNA-seq_Training_Dataset_CCBR.csv",
 			"required": true
+		},
+		{
+			"id": "count_type_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Count type",
+			"param_name": "count_type",
+			"description": "Name to use for the counts slot",
+			"type": "list",
+			"value_type": "string",
+			"default_value": "raw",
+			"extra_data": [
+				"raw",
+				"clean",
+				"filt",
+				"norm",
+				"batch"
+			]
+		},
+		{
+			"id": "sample_id_colname_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Sample ID column name",
+			"param_name": "sample_id_colname",
+			"description": "Column name for sample IDs; leave blank to use the MOSuite default",
+			"type": "text",
+			"value_type": "string"
+		},
+		{
+			"id": "feature_id_colname_id",
+			"category": "FvI4Z2eb9sjL47Jt",
+			"name": "Feature ID column name",
+			"param_name": "feature_id_colname",
+			"description": "Column name for feature IDs; leave blank to use the MOSuite default",
+			"type": "text",
+			"value_type": "string"
 		}
 	]
 }
