@@ -1,14 +1,14 @@
-# --------------------------------------------
-# CITATION file created with {cffr} R package
+# ------------------------------------------------
+# CITATION.cff file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# --------------------------------------------
+# ------------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "MOSuite" in publications use:'
 type: software
 license: MIT
 title: 'MOSuite: R package for differential multi-omics analysis'
-version: 0.3.1
+version: 0.4.0.9000
 doi: 10.5281/zenodo.16371580
 identifiers:
 - description: Archived snapshots of all versions
@@ -75,7 +75,7 @@ references:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
   year: '2026'
-  version: '>= 4.0.0'
+  version: '>= 4.1.0'
 - type: software
   title: assertthat
   abstract: 'assertthat: Easy Pre and Post Assertions'
@@ -87,6 +87,18 @@ references:
     email: hadley@rstudio.com
   year: '2026'
   doi: 10.32614/CRAN.package.assertthat
+- type: software
+  title: cli
+  abstract: 'cli: Helpers for Developing Command Line Interfaces'
+  notes: Imports
+  url: https://cli.r-lib.org
+  repository: https://CRAN.R-project.org/package=cli
+  authors:
+  - family-names: Csárdi
+    given-names: Gábor
+    email: gabor@posit.co
+  year: '2026'
+  doi: 10.32614/CRAN.package.cli
 - type: software
   title: dendextend
   abstract: 'dendextend: Extending ''dendrogram'' Functionality in R'
@@ -215,7 +227,6 @@ references:
     orcid: https://orcid.org/0000-0002-9335-7468
   year: '2026'
   doi: 10.32614/CRAN.package.ggplot2
-  version: < 4.0.0
 - type: software
   title: glue
   abstract: 'glue: Interpreted String Literals'
@@ -232,6 +243,16 @@ references:
     orcid: https://orcid.org/0000-0002-6983-2759
   year: '2026'
   doi: 10.32614/CRAN.package.glue
+- type: software
+  title: grid
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  institution:
+    name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2026'
 - type: software
   title: htmlwidgets
   abstract: 'htmlwidgets: HTML Widgets for R'
@@ -584,7 +605,7 @@ references:
   doi: 10.32614/CRAN.package.broom
 - type: software
   title: cffr
-  abstract: 'cffr: Generate Citation File Format (''cff'') Metadata for R Packages'
+  abstract: 'cffr: Generate Citation File Format (''CFF'') Metadata for R Packages'
   notes: Suggests
   url: https://docs.ropensci.org/cffr/
   repository: https://CRAN.R-project.org/package=cffr
@@ -714,7 +735,7 @@ references:
   authors:
   - family-names: Auguie
     given-names: Baptiste
-    email: baptiste.auguie@gmail.com
+    email: baptiste.auguie@vuw.ac.nz
   year: '2026'
   doi: 10.32614/CRAN.package.gridExtra
 - type: software
@@ -766,6 +787,23 @@ references:
     given-names: Jim
   year: '2026'
   doi: 10.32614/CRAN.package.plotrix
+- type: software
+  title: quarto
+  abstract: 'quarto: R Interface to ''Quarto'' Markdown Publishing System'
+  notes: Suggests
+  url: https://quarto-dev.github.io/quarto-r/
+  repository: https://CRAN.R-project.org/package=quarto
+  authors:
+  - family-names: Allaire
+    given-names: JJ
+    email: jj@posit.co
+    orcid: https://orcid.org/0000-0003-0174-9868
+  - family-names: Dervieux
+    given-names: Christophe
+    email: cderv@posit.co
+    orcid: https://orcid.org/0000-0003-4474-2498
+  year: '2026'
+  doi: 10.32614/CRAN.package.quarto
 - type: software
   title: RColorBrewer
   abstract: 'RColorBrewer: ColorBrewer Palettes'
@@ -961,9 +999,12 @@ references:
   abstract: 'UpSetR: A More Scalable Alternative to Venn and Euler Diagrams for Visualizing
     Intersecting Sets'
   notes: Suggests
-  url: http://github.com/hms-dbmi/UpSetR
+  url: https://github.com/hms-dbmi/UpSetR
   repository: https://CRAN.R-project.org/package=UpSetR
   authors:
+  - family-names: Conway
+    given-names: Jake
+    email: jake.conway@pathai.com
   - family-names: Gehlenborg
     given-names: Nils
     email: nils@hms.harvard.edu

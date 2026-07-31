@@ -1,8 +1,29 @@
+## MOSuite development version
+
+## MOSuite 0.4.0
+
+- Fix how `plot_volcano_summary()` & `plot_volcano_enhanced` handle detecting column names for features, significance, and fold-change. `plot_volcano_summary()` plot now uses `plot_volcano_enhanced()` for rendering. (#239, @phoman14)
+- Update PCA label, point-size, and histogram behavior. (#230, @phoman14)
+- Add optional count log-transform controls for PCA plots.  (#234, @phoman14)
+- Add a post-clean CPM histogram output in `clean_raw_counts()`. (#234, @phoman14)
+- Improvements to plot colors: (#223, @phoman14)
+  - Align plot color defaults with the MOSuite Code Ocean capsule defaults while preserving fallback random colors when a requested palette is too short.
+  - Improve top and bottom legend wrapping and automatic legend text sizing for PCA and histogram plots with many or long labels.
+  - Add optional group coloring to `plot_read_depth()` and the `clean_raw_counts()` read-depth output while preserving the single-color default when no group is selected.
+- New function `display_colors()` shows a multiOmicDataSet's chosen color palettes, and `get_colors_lst()` now takes a palette vector rather than function for simplicity. (#236, @kelly-sovacool)
+- New report template & helper function: `render_report()`. (#120, @kelly-sovacool)
+- Fix ggplot2 size deprecation warning in `plot_volcano_summary()`. (#228, @kelly-sovacool)
+- docs: show how to set `output_dir` in `render_report()`. (#235, @kelly-sovacool)
+
+## MOSuite 0.3.2
+
+- Support ggplot2 v4.0.0 for correlation heatmap plots in `filter_counts()`, `normalize_counts()`, and `batch_correct_counts()`. (#205, @copilot, @kelly-sovacool)
+
 ## MOSuite 0.3.1
 
 - Fix recursion error in `plot_venn_diagram()`. (#188, @kelly-sovacool)
 - Fix S7 dispatch argument mismatch in `plot_read_depth()` and `plot_histogram()`. (#200, @copilot, @kelly-sovacool)
-- Fix crash in `remove_low_count_genes()` when `use_group_based_filtering = TRUE`. (#200, @copilot, @kelly-sovacool)
+- Fix bug in `remove_low_count_genes()` when `use_group_based_filtering = TRUE`. (#200, @copilot, @kelly-sovacool)
 - Fix color palette selection to fall back to random colors with a message when the number of categories exceeds the palette maximum. (#204, @copilot, @kelly-sovacool)
 - Update S7 class, generic, and method documentation to use roxygen2 v8.0.0. (#206, #212, @copilot, @kelly-sovacool)
 - A docker container with only MOSuite's dependencies, not MOSuite itself, is now available: <https://hub.docker.com/r/nciccbr/mosuite-minimal>. (#209, @kelly-sovacool)
