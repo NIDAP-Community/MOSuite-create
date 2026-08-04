@@ -1,6 +1,6 @@
-# hash:sha256:3ddd04105ec5ac0dc17d676e30ef154cb818689953c1d6cdcd656c82272f4902
+# hash:sha256:eaf9d65a12b71184eb3dfb71dc133669318c0d8295e3c3db8e46c4a3c9b9f3e7
 ARG REGISTRY_HOST
-FROM $REGISTRY_HOST/codeocean/mosuite-minimal:v0.3.1
+FROM $REGISTRY_HOST/codeocean/mosuite-minimal:v0.4.0
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG GIT_ASKPASS
