@@ -1,3 +1,33 @@
+test_that("every app panel parameter is accepted and used by main.R", {
+  repo_root <- normalizePath(
+    file.path(testthat::test_path(), "..", ".."),
+    mustWork = TRUE
+  )
+  panel <- jsonlite::fromJSON(
+    file.path(repo_root, ".codeocean", "app-panel.json")
+  )
+  main_text <- paste(
+    readLines(file.path(repo_root, "code", "main.R"), warn = FALSE),
+    collapse = "\n"
+  )
+  param_names <- panel$parameters$param_name
+  expect_true(length(param_names) > 0)
+  for (param_name in param_names) {
+    expect_match(
+      main_text,
+      sprintf('"--%s"', param_name),
+      fixed = TRUE,
+      info = sprintf("main.R should define a --%s CLI argument", param_name)
+    )
+    expect_match(
+      main_text,
+      sprintf("args$%s", param_name),
+      fixed = TRUE,
+      info = sprintf("main.R should read args$%s", param_name)
+    )
+  }
+})
+
 test_that("app panel exposes advanced create parameters accepted by main.R", {
   repo_root <- normalizePath(
     file.path(testthat::test_path(), "..", ".."),
@@ -27,11 +57,15 @@ test_that("app panel exposes advanced create parameters accepted by main.R", {
     c("raw", "clean", "filt", "norm", "batch")
   )
   expect_equal(
-    panel$parameters$category[panel$parameters$param_name == "sample_id_colname"],
+    panel$parameters$category[
+      panel$parameters$param_name == "sample_id_colname"
+    ],
     advanced_category
   )
   expect_equal(
-    panel$parameters$category[panel$parameters$param_name == "feature_id_colname"],
+    panel$parameters$category[
+      panel$parameters$param_name == "feature_id_colname"
+    ],
     advanced_category
   )
 })
