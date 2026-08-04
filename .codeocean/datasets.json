@@ -2,8 +2,8 @@
 	"version": 1,
 	"attached_datasets": [
 		{
-			"id": "bd9a7518-66cb-4d50-9992-df3271aeb807",
-			"mount": "nidap"
+			"id": "0a7eb676-447f-4f87-a9ba-acd8fb103bca",
+			"mount": "nidap-1.0"
 		}
 	]
 }

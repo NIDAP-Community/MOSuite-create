@@ -5,8 +5,8 @@
   "sources": {
     "code/MOSuite": {
       "repo_url": "https://github.com/CCBR/MOSuite",
-      "ref": "main",
-      "git_sha": "c09ee39f9b282237f13d88dcf4cdfed965209c68"
+      "ref": "v0.4.1",
+      "git_sha": "4e85d49ab155618d9f6beafd327b6fb87dfa8609"
     }
   }
 }
