@@ -28,6 +28,25 @@ parser$add_argument(
   type = "character",
   default = "sample.*\\.[ct]sv(\\.gz)?"
 )
+parser$add_argument(
+  "--count_type",
+  type = "character",
+  choices = c("raw", "clean", "filt", "norm", "batch"),
+  default = "raw",
+  help = "Name to use for the counts slot"
+)
+parser$add_argument(
+  "--sample_id_colname",
+  type = "character",
+  default = "",
+  help = "Column name for sample IDs"
+)
+parser$add_argument(
+  "--feature_id_colname",
+  type = "character",
+  default = "",
+  help = "Column name for feature IDs"
+)
 
 args <- parser$parse_args()
 
@@ -80,6 +99,9 @@ message(glue("Sample metadata file: {sample_metadata_filename}"))
 moo <- create_multiOmicDataSet_from_files(
   sample_meta_filepath = sample_metadata_filename,
   feature_counts_filepath = count_filename,
+  count_type = args$count_type,
+  sample_id_colname = parse_optional_vector(args$sample_id_colname),
+  feature_id_colname = parse_optional_vector(args$feature_id_colname),
   delim = args$delim
 )
 write_rds(
