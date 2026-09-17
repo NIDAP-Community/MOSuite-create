@@ -2,6 +2,8 @@
 
 ## Development version
 
+## v8.0
+
 - Expose advanced create capsule input parameters in the Code Ocean app panel for MOSuite v0.4.1 (#17, @phoman14).
 - Improved the Code Ocean parameter UI for the create capsule (#11, @phoman14).
 
