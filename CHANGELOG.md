@@ -2,6 +2,8 @@
 
 ## Development version
 
+- Use MOSuite v0.5.0. (#20, @kelly-sovacool)
+
 ## v8.0
 
 - Expose advanced create capsule input parameters in the Code Ocean app panel for MOSuite v0.4.1 (#17, @phoman14).

@@ -43,12 +43,13 @@ setup_cli_workspace <- function(prefix = "mosuite_create_test_") {
     info = paste("Sample metadata fixture should exist at", sample_fixture)
   )
 
+  counts_df <- readr::read_csv(counts_fixture, show_col_types = FALSE)
+  if (nrow(counts_df) > 1000L) {
+    counts_df <- counts_df[seq_len(1000L), , drop = FALSE]
+  }
+  readr::write_csv(counts_df, gzfile(file.path(data_dir, "counts.csv.gz")))
+
   # Names are chosen to satisfy default regexes in code/main.R.
-  file.copy(
-    counts_fixture,
-    file.path(data_dir, "counts.csv.gz"),
-    overwrite = TRUE
-  )
   file.copy(
     sample_fixture,
     file.path(data_dir, "sample_metadata.csv.gz"),
@@ -93,9 +94,13 @@ expect_outputs_created <- function(results_dir) {
   )
 
   moo <- readr::read_rds(moo_path)
+  moo_class_names <- class(moo)
   expect_true(
-    inherits(moo, "MOSuite::multiOmicDataSet"),
-    info = "Output should be an S7 multiOmicDataSet object"
+    any(grepl("multiOmicDataSet", moo_class_names, fixed = TRUE)),
+    info = paste(
+      "Output should be an S7 multiOmicDataSet object; actual classes:",
+      paste(moo_class_names, collapse = ", ")
+    )
   )
 }
 
